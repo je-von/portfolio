@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
       <Script src="https://kit.fontawesome.com/0c8f883c59.js" crossOrigin="anonymous"></Script>
       <Head>
-        <link rel="icon" type="image/png" href="/assets/avatar.png" />
+        <link rel="icon" type="image/jpg" href="/assets/icon.jpg" />
       </Head>
       <ThemeProvider attribute="class">
         <Component {...pageProps} />

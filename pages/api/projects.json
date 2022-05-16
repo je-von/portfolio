@@ -1,0 +1,23 @@
+{
+    "tohopedia": {
+      "title": "Tohopedia",
+      "short_desc": "About a \"tokopedia\" app clone with NextJS (TypeScript) and GraphQL (Go)",
+      "long_desc": "- A fully responsive \"tokopedia\" app clone created with NextJS (TypeScript) and GraphQL (Go)\n- The databases used in this app are MySQL (for development and testing) and PostgreSQL (for deployment)\n- The frontend side was deployed using Vercel, while the backend was deployed using Heroku\nTo view this app online you can visit: https://toped.vercel.app/\nFor testing, you may use the following credentials:\nEmail: jevon@mail.com\nPassword: jevon123",
+      "repository_link": "https://github.com/je-von/tohopedia",
+      "app_link": "https://toped.vercel.app/"
+    },
+    "balaitani": {
+      "title": "BalaiTani",
+      "short_desc": "online store (e-commerce) to sell goods & crops from local farmers",
+      "long_desc": "BalaTani is an e-commerce which sells crops and goods directly from Indonesian local farmers, without any third-party. This project was created\nto help farmers in making profits and to minimize fraud done by irresponsible third-party who take profits and steal money from farmers. This project was\ncreated as final project for Software Engineering course and Research Methodology for Computer Science course in my 4th semester, with my fellow\npartners, Beni and Louis.\nThis project was developed and created using one of the best frameworks in PHP programming language, Laravel Framework. The databases used for\nthis app is MySQL (for local development) and PostgreSQL (for global deployment). Heroku is used to deploy and run this app. We also used Bootstrap\nas our main Ul design framework tools.",
+      "repository_link": "https://github.com/je-von/balaitani",
+      "app_link": "http://balaitani.herokuapp.com/"
+    },
+    "bee_portal": {
+      "title": "bee-portal",
+      "short_desc": "bee-portal (a desktop app for LMS) with Electron JS",
+      "long_desc": "bee-portal is a desktop app for Learning Management System created with Electron JS including features like managing classes, courses, attendance, scores for lecturer, students, and other university's department. Firestore (Firebase) was also used as this project's main database.\nDownload and install this app on your desktop here: https://github.com/je-von/bee-portal/raw/master/bee_portal_installer_v1.2.exe.\nFor testing, you may use the following credentials:\nEmail: jevon.levin@slc.ac.id\nPassword: jevon123",
+      "repository_link": "https://github.com/je-von/bee-portal",
+      "app_link": "https://github.com/je-von/bee-portal/raw/master/bee_portal_installer_v1.2.exe"
+    }
+  }

@@ -1,38 +1,32 @@
 import type { NextComponentType } from 'next'
 
 import Link from 'next/link'
-
+import ProjectsData from '../../pages/api/projects.json'
 const Projects: NextComponentType = () => {
+  const projectsComponent = []
+
+  const projects = ProjectsData
+  for (let p in projects) {
+    let project = projects[p]
+    projectsComponent.push(
+      <Link href={project.repository_link} passHref>
+        <a
+          className="mx-2 my-4 h-[8rem] w-[14rem] cursor-pointer rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
+            <p className="text-xl font-semibold">{project.title}</p>
+            <p className="h-2/4 w-full text-ellipsis line-clamp-2">{project.short_desc}</p>
+          </div>
+        </a>
+      </Link>
+    )
+  }
   return (
     <div className="my-16 px-3 font-sen" id="projects">
       <p className="text-3xl font-bold">Featured Projects</p>
-      <div className="my-8 flex flex-col items-center justify-center gap-10 sm:flex-row">
-        <Link href="https://vault3.live" passHref>
-          <a
-            className="h-[7rem] w-[14rem] cursor-pointer rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 duration-100 hover:scale-105"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="toggle-bg flex h-full w-full flex-col items-center justify-center rounded-lg px-2 text-center font-medium">
-              <p className="text-xl font-semibold">Vault3</p>
-              <p>Your safest decentralized vault</p>
-            </div>
-          </a>
-        </Link>
-
-        <Link href="https://github.com/avneesh0612/Orbits-UI" passHref>
-          <a
-            className="h-[7rem] w-[14rem] cursor-pointer rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
-              <p className="text-xl font-semibold">Orbits UI</p>
-              <p>React component library built with Tailwind CSS</p>
-            </div>
-          </a>
-        </Link>
-      </div>
+      <div className="my-4 flex flex-wrap items-center justify-center">{projectsComponent}</div>
     </div>
   )
 }
