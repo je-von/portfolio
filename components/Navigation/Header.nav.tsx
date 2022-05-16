@@ -1,29 +1,27 @@
-import type { NextComponentType, NextPageContext } from "next";
+import type { NextComponentType, NextPageContext } from 'next'
 
-import Link from "next/link";
-import { VscGithubAlt } from "../Misc/Icons.collection";
+import Link from 'next/link'
+import { VscGithubAlt } from '../Misc/Icons.collection'
 
-import type { linkProps } from "../../@types/prop.types";
+import type { linkProps } from '../../@types/prop.types'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
-const TextLink: NextComponentType<NextPageContext, {}, linkProps> = ({
-  text,
-  url,
-}) => {
+const TextLink: NextComponentType<NextPageContext, {}, linkProps> = ({ text, url }) => {
   return (
     <a
       href={url}
-      className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+      className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-black duration-100 hover:bg-black hover:text-white dark:text-gray-200 dark:hover:bg-white dark:hover:text-black"
     >
       {text}
     </a>
-  );
-};
+  )
+}
 
 const Header: NextComponentType = () => {
+  const { theme, setTheme } = useTheme()
   return (
-    <header
-      className={`font-jost py-8 sm:flex sm:flex-row sm:items-center sm:justify-between`}
-    >
+    <header className={`py-8 font-jost sm:flex sm:flex-row sm:items-center sm:justify-between`}>
       <p className="hidden sm:flex sm:flex-row sm:gap-x-4">
         <TextLink text="Home" url="#" />
         <TextLink text="Skills" url="#skills" />
@@ -31,18 +29,16 @@ const Header: NextComponentType = () => {
         <TextLink text="Contact" url="#contact" />
       </p>
 
-      <Link href="https://github.com/kr-anurag/portfolio" passHref>
-        <a
-          className="float-right mr-2 rounded-lg bg-zinc-800 p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 sm:float-none sm:mr-0"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="github-repo"
-        >
-          <VscGithubAlt />
-        </a>
-      </Link>
+      <Image
+        src="/assets/icon/sun.svg"
+        width={30}
+        height={30}
+        alt="Toggle theme"
+        className="toggleTheme cursor-pointer"
+        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
