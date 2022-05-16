@@ -2,45 +2,47 @@ import type { NextComponentType } from 'next'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 
 import { HiOutlineArrowNarrowRight } from '../Misc/Icons.collection'
+import Tooltip from '../Misc/Tooltip'
 
 const About: NextComponentType = () => {
+  // const [isHovering, setIsHovering] = useState(false)
+
   return (
-    <div className="my-8 flex flex-row items-center justify-between px-3 font-sen">
+    <div className="my-8 flex flex-row justify-between px-3 font-sen sm:items-center">
       <div>
         <p className="text-3xl font-bold text-black dark:text-white">Jevon Levin</p>
         <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
 
         <p className="mt-4 text-gray-400">
-          Building Web apps, proficient in Frontend. Writing articles <br /> on my blog sometimes.
+          Building web app, taking pictures,{' '}
+          <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-full" alt="avatar" />} direction="right">
+            <div className="cursor-pointer">
+              cuddle with <b>Hershey</b>.
+            </div>
+          </Tooltip>
+          {/* <div className="ml-1 cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+            {isHovering ? <Image src="/assets/hershey.jpg" width="50" height="50" className="rounded-full" alt="avatar" /> : <b>Hershey.</b>}
+          </div> */}
         </p>
 
-        <Link href="https://blog.anurag.tech" passHref>
+        <Link href="http://www.jevonlevin.com" passHref>
           <a
             className="mt-4 flex cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
             target="_blank"
             rel="noopener noreferrer"
           >
             Read my Blog
-            <HiOutlineArrowNarrowRight />
-          </a>
-        </Link>
-
-        <Link href="https://sponsor.anurag.tech" passHref>
-          <a
-            className="mt-4 flex cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Love my work? Sponsor me!
-            <HiOutlineArrowNarrowRight />
+            <MdKeyboardArrowRight />
           </a>
         </Link>
       </div>
 
-      <div className="hidden custom:block">
-        <Image src="/assets/avatar.png" width="112" height="112" className="rounded-full" alt="avatar" />
+      <div className="custom:block">
+        <Image src="/assets/me.jpg" width="112" height="112" className="rounded-full" alt="avatar" />
       </div>
     </div>
   )
