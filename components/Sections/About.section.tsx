@@ -10,7 +10,7 @@ const About: NextComponentType = () => {
     <div className="my-8 flex flex-row items-center justify-between px-3 font-sen">
       <div>
         <p className="text-3xl font-bold text-black dark:text-white">Jevon Levin</p>
-        <p className="mt-1 text-lg text-gray-600">Frontend Developer, Blogger and a Student</p>
+        <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
 
         <p className="mt-4 text-gray-400">
           Building Web apps, proficient in Frontend. Writing articles <br /> on my blog sometimes.
@@ -40,7 +40,7 @@ const About: NextComponentType = () => {
       </div>
 
       <div className="hidden custom:block">
-        <Image src="/assests/avatar.png" width="112" height="112" className="rounded-full" alt="avatar" />
+        <Image src="/assets/avatar.png" width="112" height="112" className="rounded-full" alt="avatar" />
       </div>
     </div>
   )

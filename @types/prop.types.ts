@@ -1,11 +1,11 @@
 interface iconProps {
-  icon: JSX.Element;
-  url: string;
+  icon: JSX.Element
+  url: string
 }
 
 interface linkProps {
-  text: string;
-  url: string;
+  text: JSX.Element
+  url: string
 }
 
-export type { iconProps, linkProps };
+export type { iconProps, linkProps }
