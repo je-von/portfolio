@@ -15,7 +15,6 @@ import { fetcher } from '../../lib/fetcher'
 import ProjectsData from '../../pages/api/projects.json'
 import Tooltip from '../Misc/Tooltip'
 const Projects: NextComponentType = () => {
-  // const { data } = useSWR<Data>('/api/github', fetcher)
   const [count, setCount] = useState(3)
   const [repo, setRepo] = useState(null)
 
@@ -55,7 +54,6 @@ const Projects: NextComponentType = () => {
     </>
   )
 
-  // console.log(data)
   return (
     <div className="my-16 px-3 font-sen" id="projects">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
@@ -74,12 +72,14 @@ const Projects: NextComponentType = () => {
       <div className="my-4 flex w-full flex-wrap items-center justify-center">
         {githubRepos?.repositories.slice(0, count).map((repo: any) => (
           <div
-            onClick={() => setRepo(repo)}
+            // onClick={() => setRepo(repo)}
             key={repo.id}
-            className="mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 cursor-pointer rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
+            className="mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
           >
             <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
-              <p className="text-xl font-semibold">{repo.name}</p>
+              <Link href={`/project/${repo.name}`} passHref>
+                <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{repo.name}</p>
+              </Link>
               <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{repo.description}</p>
               <div className="mt-1 flex w-full flex-wrap items-center justify-evenly">
                 {repo.topics.slice(0, 5).map((topic: any, index: any) => (
@@ -120,7 +120,7 @@ const Projects: NextComponentType = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="rounded-full bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-2 text-center font-jost text-xl font-medium text-black duration-100 hover:scale-105"
+          className="rounded-full bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-105 dark:text-black"
           onClick={() => {
             if (count < githubRepos?.repositories.length) setCount((prev) => prev + 3)
             else window.open('https://github.com/je-von?tab=repositories', '_blank')

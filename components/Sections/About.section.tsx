@@ -32,10 +32,10 @@ const About: NextComponentType = () => {
         <Link href="#" passHref>
           <a
             className="mt-4 flex w-fit cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
-            Read my resume
+            read my resume
             <MdKeyboardArrowRight />
           </a>
         </Link>
