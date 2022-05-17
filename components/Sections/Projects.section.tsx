@@ -6,6 +6,7 @@ import { AiFillEye, AiOutlineGithub } from 'react-icons/ai'
 import { BsArrowDown, BsInfoCircle } from 'react-icons/bs'
 import { HiArrowDown } from 'react-icons/hi'
 import { MdArrowDownward, MdArrowDropDown } from 'react-icons/md'
+import ReactMarkdown from 'react-markdown'
 import useSWR from 'swr'
 import { Data } from '../../@types/prop.types'
 import { fetcher } from '../../lib/fetcher'
@@ -15,6 +16,7 @@ const Projects: NextComponentType = () => {
   const { data } = useSWR<Data>('/api/github', fetcher)
   const [count, setCount] = useState(3)
 
+  console.log(data)
   return (
     <div className="my-16 px-3 font-sen" id="projects">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
@@ -36,6 +38,7 @@ const Projects: NextComponentType = () => {
             key={repo.id}
             className="mx-2 my-4  min-h-fit min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
           >
+            {/* <ReactMarkdown>{repo.readme}</ReactMarkdown> */}
             <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
               <p className="text-xl font-semibold">{repo.name}</p>
               <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{repo.description}</p>

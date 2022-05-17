@@ -27,6 +27,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       message = 'Fail to fetch from api.github.com (now showing saved projects from 17/05/2022)'
     }
 
+    for (let repo of repositories) {
+      try {
+        const readmeResponse = await fetch(`https://raw.githubusercontent.com/je-von/${repo.name}/master/README.md`)
+        const temp = await readmeResponse.text()
+        repo.readme = temp
+      } catch (e: any) {}
+    }
+
     res.setHeader('Cache-Control', 'public, s-maxage=1200, stale-while-revalidate=600')
 
     return res.status(200).json({
