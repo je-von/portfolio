@@ -14,6 +14,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
 import { Contact, Header } from '../components'
+import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -60,17 +61,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" type="image/jpg" href="/assets/icon.jpg" />
       </Head>
-      <ThemeProvider attribute="class">
-        <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
-          <Header />
-          <div className="">
-            <Component {...pageProps} />
-          </div>
-          <div className="bottom-0 mt-auto flex justify-center">
-            <Contact />
-          </div>
-        </div>
-      </ThemeProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }
