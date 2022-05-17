@@ -28,7 +28,7 @@ const Photography: NextComponentType = () => {
     <div className="my-16 px-3 font-sen" id="photography">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
         Photography Projects{' '}
-        <Tooltip
+        {/* <Tooltip
           content={
             <div className="flex w-24 px-2 py-1">
               <p className="w-full whitespace-pre-wrap break-words text-xs font-thin text-white dark:text-black">{'info'}</p>
@@ -37,17 +37,17 @@ const Photography: NextComponentType = () => {
           direction="bottom"
         >
           <BsInfoCircle className="ml-3 text-sm" />
-        </Tooltip>
+        </Tooltip> */}
       </div>
       <div className="my-4 flex w-full flex-wrap items-center justify-center">
         {photographs?.map((p, index) => (
           <div
             // onClick={() => setRepo(repo)}
             key={index}
-            className="relative mx-2 my-4 min-w-[23rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105"
+            className="relative mx-2 my-4 min-h-fit min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105 sm:min-w-[26rem]"
           >
             {/* <Carousel photographData={p} key={index} /> */}
-            <div className="relative h-72 w-full">
+            <div className="relative h-48 w-full sm:h-72">
               {/* <Image src={`/assets/photography/${p.type}/${p.slug}/0.jpg`} layout="fill" className="rounded-lg" alt="avatar" objectFit="cover" /> */}
               <div
                 style={{ backgroundImage: `url('/assets/photography/${p.type}/${p.slug}/0.jpg')` }}
