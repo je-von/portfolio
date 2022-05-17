@@ -18,8 +18,8 @@ const About: NextComponentType = () => {
         <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
 
         <div className="mt-4 text-gray-400">
-          Building web app, taking pictures,{' '}
-          <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-full" alt="avatar" />} direction="right">
+          Build web app, take pictures,{' '}
+          <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-lg" alt="avatar" />} direction="right">
             <div className="cursor-pointer">
               cuddle with <b>Hershey</b>.
             </div>
@@ -31,7 +31,7 @@ const About: NextComponentType = () => {
 
         <Link href="#" passHref>
           <a
-            className="mt-4 flex cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
+            className="mt-4 flex w-fit cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -9,7 +9,6 @@ const Tooltip = (props) => {
   }
 
   const hideTip = () => {
-    clearInterval(timeout)
     setActive(false)
   }
 
@@ -23,7 +22,7 @@ const Tooltip = (props) => {
       {/* Wrapping */}
       {props.children}
       {active && (
-        <div className={`Tooltip-Tip ${props.direction || 'top'} w-16`}>
+        <div className={`Tooltip-Tip min-h-fit max-w-md ${props.direction || 'top'}`}>
           {/* Content */}
           {props.content}
         </div>
