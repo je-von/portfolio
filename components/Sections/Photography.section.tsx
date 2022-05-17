@@ -44,13 +44,20 @@ const Photography: NextComponentType = () => {
           <div
             // onClick={() => setRepo(repo)}
             key={index}
-            className="relative mx-2 my-4 min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105"
+            className="relative mx-2 my-4 min-w-[23rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105"
           >
             {/* <Carousel photographData={p} key={index} /> */}
-            {/* <div className="relative h-48 w-full">
-              <Image src={`/assets/photography/${p.type}/${p.slug}/0.jpg`} layout="fill" className="rounded-lg" alt="avatar" objectFit="cover" />
+            <div className="relative h-72 w-full">
+              {/* <Image src={`/assets/photography/${p.type}/${p.slug}/0.jpg`} layout="fill" className="rounded-lg" alt="avatar" objectFit="cover" /> */}
+              <div
+                style={{ backgroundImage: `url('/assets/photography/${p.type}/${p.slug}/0.jpg')` }}
+                className={`absolute inset-0 bg-cover bg-center `}
+              ></div>
+              <div className="absolute inset-0 z-10 flex items-center justify-center text-center text-6xl font-semibold text-black/0 duration-200 hover:bg-white/60 hover:text-black dark:text-white/0 hover:dark:bg-black/60 hover:dark:text-white">
+                {p.title}
+              </div>
             </div>
-            <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
+            {/* <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
               <Link href={`/photography/${p.slug}`} passHref>
                 <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{p.title}</p>
               </Link>
@@ -66,7 +73,7 @@ const Photography: NextComponentType = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="rounded-full bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-105 dark:text-black"
+          className="rounded-full bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-105 dark:text-black"
           // onClick={() => {
           //   if (count < githubRepos?.repositories.length) setCount((prev) => prev + 3)
           //   else window.open('https://github.com/je-von?tab=repositories', '_blank')
