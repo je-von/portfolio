@@ -13,7 +13,13 @@ import { Data } from '../../@types/prop.types'
 import AppContext from '../../context/AppContext'
 import { fetcher } from '../../lib/fetcher'
 import Tooltip from '../Misc/Tooltip'
+import PhotographyData from '../../pages/api/photography.json'
+import Image from 'next/image'
+import Carousel from '../Misc/Carousel/Carousel'
+
 const Photography: NextComponentType = () => {
+  const photographs = PhotographyData
+
   const [count, setCount] = useState(3)
 
   const value = useContext(AppContext)
@@ -34,31 +40,29 @@ const Photography: NextComponentType = () => {
         </Tooltip>
       </div>
       <div className="my-4 flex w-full flex-wrap items-center justify-center">
-        {/* <div
-          // onClick={() => setRepo(repo)}
-          // key={repo.id}
-          className="mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
-        >
-          <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
-            <Link href={`/coding/${''}`} passHref>
-              <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{'tes'}</p>
-            </Link>
-            <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{'repo.description'}</p>
-
-            <div className="mb-1 flex w-full items-center justify-evenly ">
-              <Link href={'/repo.repoUrl'} passHref>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex cursor-pointer items-center rounded-lg px-2 py-1 text-lightText hover:scale-110"
-                >
-                  <AiOutlineGithub className="mr-1" />
-                  github
-                </a>
-              </Link>
+        {photographs?.map((p, index) => (
+          <div
+            // onClick={() => setRepo(repo)}
+            key={index}
+            className="relative mx-2 my-4 min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105"
+          >
+            {/* <Carousel photographData={p} key={index} /> */}
+            {/* <div className="relative h-48 w-full">
+              <Image src={`/assets/photography/${p.type}/${p.slug}/0.jpg`} layout="fill" className="rounded-lg" alt="avatar" objectFit="cover" />
             </div>
+            <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
+              <Link href={`/photography/${p.slug}`} passHref>
+                <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{p.title}</p>
+              </Link>
+              <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{p.description}</p>
+
+              <div className="my-1 rounded-lg bg-lightText px-2 py-1 text-xs text-white dark:bg-zinc-800" key={index}>
+                {p.type}
+              </div>
+            </div> */}
           </div>
-        </div> */}
+        ))}
+        {/*  */}
       </div>
       <div className="flex items-center justify-center">
         <button
