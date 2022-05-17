@@ -15,7 +15,7 @@ const Projects: NextComponentType = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-primary px-2 text-center font-medium">
+          <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
             <p className="text-xl font-semibold">{project.title}</p>
             <p className="h-2/4 w-full text-ellipsis line-clamp-2">{project.short_desc}</p>
           </div>

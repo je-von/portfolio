@@ -13,7 +13,7 @@ const TextLink: NextComponentType<NextPageContext, {}, linkProps> = ({ text, url
   return (
     <a
       href={url}
-      className="cursor-pointer rounded-md py-2 px-3 text-xl text-black duration-100 hover:bg-black hover:text-white dark:text-gray-200 dark:hover:bg-white dark:hover:text-black"
+      className="cursor-pointer rounded-md py-2 px-3 text-xl text-black duration-100 hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
     >
       {text}
     </a>
@@ -30,7 +30,9 @@ const Header: NextComponentType = () => {
         <TextLink text={<i className="fa-solid fa-code"></i>} url="#projects" />
         <TextLink text={<i className="fa-solid fa-camera"></i>} url="#contact" />
       </p>
-      <TextLink text={theme === 'light' ? <BsMoon onClick={toggleTheme} /> : <BsSun onClick={toggleTheme} />} url="#" />
+      <div onClick={toggleTheme} className="flex">
+        <TextLink text={theme === 'light' ? <BsMoon /> : <BsSun />} url="#" />
+      </div>
     </header>
   )
 }

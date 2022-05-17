@@ -1,7 +1,7 @@
 {
     "tohopedia": {
       "title": "Tohopedia",
-      "short_desc": "About a \"tokopedia\" app clone with NextJS (TypeScript) and GraphQL (Go)",
+      "short_desc": "a \"tokopedia\" app clone with NextJS (TypeScript) and GraphQL (Go)",
       "long_desc": "- A fully responsive \"tokopedia\" app clone created with NextJS (TypeScript) and GraphQL (Go)\n- The databases used in this app are MySQL (for development and testing) and PostgreSQL (for deployment)\n- The frontend side was deployed using Vercel, while the backend was deployed using Heroku\nTo view this app online you can visit: https://toped.vercel.app/\nFor testing, you may use the following credentials:\nEmail: jevon@mail.com\nPassword: jevon123",
       "repository_link": "https://github.com/je-von/tohopedia",
       "app_link": "https://toped.vercel.app/"
