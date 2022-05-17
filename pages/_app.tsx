@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import '../styles/tooltip.css'
 
 import '@fontsource/jost/400.css'

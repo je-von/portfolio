@@ -12,47 +12,12 @@ import useSWR from 'swr'
 import { Data } from '../../@types/prop.types'
 import AppContext from '../../context/AppContext'
 import { fetcher } from '../../lib/fetcher'
-import ProjectsData from '../../pages/api/projects.json'
 import Tooltip from '../Misc/Tooltip'
 const Projects: NextComponentType = () => {
   const [count, setCount] = useState(3)
-  const [repo, setRepo] = useState(null)
 
   const value = useContext(AppContext)
   const { githubRepos } = value.state
-
-  const modal = (
-    <>
-      <div className="fixed inset-0 z-50 mt-10 flex h-[90vh] items-center justify-center overflow-x-hidden text-black outline-none focus:outline-none">
-        <div className="relative my-6 mx-auto h-[90vh] w-auto max-w-[90vw] sm:max-w-[50vw]">
-          {/*content*/}
-          <div className="relative flex  w-full flex-col rounded-lg border-0 bg-gray-900 shadow-lg outline-none focus:outline-none">
-            {/*header*/}
-            <div className="flex items-start justify-between rounded-t border-b border-solid border-slate-200 p-5">
-              <h3 className="flex text-3xl font-semibold">
-                {repo?.name} <p className="ml-2 font-thin text-gray-500">README</p>
-              </h3>
-              <button
-                className="float-right ml-auto border-0 p-1 text-2xl leading-none outline-none focus:outline-none"
-                onClick={() => setRepo(null)}
-              >
-                <MdClose className="text-white" />
-              </button>
-            </div>
-            {/*body*/}
-            <div className="relative w-full flex-auto overflow-hidden p-6">
-              <p className="my-4 w-full break-words text-lg leading-relaxed text-slate-500">
-                <ReactMarkdown className="text-white" rehypePlugins={[rehypeRaw]}>
-                  {repo?.readme}
-                </ReactMarkdown>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="fixed inset-0 z-40 bg-black opacity-25"></div>
-    </>
-  )
 
   return (
     <div className="my-16 px-3 font-sen" id="projects">
@@ -129,7 +94,6 @@ const Projects: NextComponentType = () => {
           {count < githubRepos?.repositories.length ? <MdArrowDropDown /> : <AiOutlineGithub />}
         </button>
       </div>
-      {repo ? modal : ''}
     </div>
   )
 }
