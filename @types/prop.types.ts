@@ -8,4 +8,8 @@ interface linkProps {
   url: string
 }
 
+export interface Data {
+  [key: string]: any
+}
+
 export type { iconProps, linkProps }
