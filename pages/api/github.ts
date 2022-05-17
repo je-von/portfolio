@@ -4,7 +4,7 @@ import { Data } from '../../@types/prop.types'
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     if (req.method === 'GET') {
-      const userReposResponse = await fetch('https://api.github.com/users/je-von/repos?sort=pushed&direction=desc')
+      const userReposResponse = await fetch('https://api.github.com/users/je-von/repos?sort=pushed&direction=desc&per_page=9')
 
       let repositories = await userReposResponse.json()
 

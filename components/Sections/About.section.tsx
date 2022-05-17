@@ -17,7 +17,7 @@ const About: NextComponentType = () => {
         <p className="text-3xl font-bold text-black dark:text-white">Jevon Levin</p>
         <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
 
-        <p className="mt-4 text-gray-400">
+        <div className="mt-4 text-gray-400">
           Building web app, taking pictures,{' '}
           <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-full" alt="avatar" />} direction="right">
             <div className="cursor-pointer">
@@ -27,7 +27,7 @@ const About: NextComponentType = () => {
           {/* <div className="ml-1 cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
             {isHovering ? <Image src="/assets/hershey.jpg" width="50" height="50" className="rounded-full" alt="avatar" /> : <b>Hershey.</b>}
           </div> */}
-        </p>
+        </div>
 
         <Link href="#" passHref>
           <a
