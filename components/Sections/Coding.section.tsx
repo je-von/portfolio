@@ -20,7 +20,7 @@ const Coding: NextComponentType = () => {
   const { githubRepos } = value.state
 
   return (
-    <div className="my-16 px-3 font-sen" id="projects">
+    <div className="my-16 px-3 font-sen" id="coding">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
         Coding Projects{' '}
         <Tooltip
@@ -42,7 +42,7 @@ const Coding: NextComponentType = () => {
             className="mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
           >
             <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
-              <Link href={`/project/${repo.name}`} passHref>
+              <Link href={`/coding/${repo.name}`} passHref>
                 <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{repo.name}</p>
               </Link>
               <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{repo.description}</p>

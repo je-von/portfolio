@@ -26,8 +26,8 @@ const Header: NextComponentType = () => {
     <header className={`flex flex-row items-center justify-between py-8`}>
       <p className="flex flex-row gap-x-4">
         <TextLink text={<i className="fa-solid fa-house"></i>} url="/" />
-        <TextLink text={<i className="fa-solid fa-code"></i>} url="/#projects" />
-        <TextLink text={<i className="fa-solid fa-camera"></i>} url="/#contact" />
+        <TextLink text={<i className="fa-solid fa-code"></i>} url="/#coding" />
+        <TextLink text={<i className="fa-solid fa-camera"></i>} url="/#photography" />
       </p>
       <div onClick={toggleTheme} className="flex">
         <TextLink text={theme === 'light' ? <BsMoon /> : <BsSun />} url="#" />
