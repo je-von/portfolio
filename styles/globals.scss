@@ -70,3 +70,7 @@ pre{
 pre::-webkit-scrollbar {
   display: none;
 }
+
+.readme a{
+  @apply hover:underline
+}

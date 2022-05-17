@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } catch (e: any) {
       // return res.status(500).json({ message: e.message })
       repositories = Repos.map(mapFunc)
-      message = 'Fail to fetch from api.github.com (now showing saved projects from 17/05/2022)'
+      message = 'Fail to fetch from api.github.com (API rate limit exceeded). Now showing saved repositories from 17/05/2022.'
     }
 
     for (let repo of repositories) {

@@ -3,6 +3,8 @@ import type { NextComponentType } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { AiOutlineAlignLeft } from 'react-icons/ai'
+import { BsInfoCircle } from 'react-icons/bs'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 import { HiOutlineArrowNarrowRight } from '../Misc/Icons.collection'
@@ -17,11 +19,12 @@ const About: NextComponentType = () => {
         <p className="text-3xl font-bold text-black dark:text-white">Jevon Levin</p>
         <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
 
-        <div className="mt-4 text-gray-400">
-          Build web app, take pictures,{' '}
+        <div className="mt-4 flex flex-wrap items-center text-gray-400">
+          <div className="mr-1">Build web app, take pictures,</div>
           <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-lg" alt="avatar" />} direction="right">
-            <div className="cursor-pointer">
-              cuddle with <b>Hershey</b>.
+            <div className="flex cursor-pointer items-center">
+              cuddle with <b className="ml-1 items-center"> Hershey</b>
+              <BsInfoCircle className="ml-2 text-xs" />
             </div>
           </Tooltip>
           {/* <div className="ml-1 cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
@@ -35,6 +38,7 @@ const About: NextComponentType = () => {
             // target="_blank"
             // rel="noopener noreferrer"
           >
+            <AiOutlineAlignLeft className="mr-1 text-black dark:text-white" />
             read my resume
             <MdKeyboardArrowRight />
           </a>

@@ -12,7 +12,7 @@ const Icon: NextComponentType<NextPageContext, {}, iconProps> = ({ icon, url }) 
         target="_blank"
         rel="noopener noreferrer"
         aria-label="contact icon"
-        className="rounded-lg bg-lightText p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 dark:bg-zinc-800"
+        className="rounded-lg bg-lightText p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 dark:bg-[#0d1117]"
       >
         {icon}
       </a>
