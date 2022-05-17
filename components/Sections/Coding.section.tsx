@@ -13,7 +13,7 @@ import { Data } from '../../@types/prop.types'
 import AppContext from '../../context/AppContext'
 import { fetcher } from '../../lib/fetcher'
 import Tooltip from '../Misc/Tooltip'
-const Projects: NextComponentType = () => {
+const Coding: NextComponentType = () => {
   const [count, setCount] = useState(3)
 
   const value = useContext(AppContext)
@@ -22,7 +22,7 @@ const Projects: NextComponentType = () => {
   return (
     <div className="my-16 px-3 font-sen" id="projects">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
-        Featured Projects{' '}
+        Coding Projects{' '}
         <Tooltip
           content={
             <div className="flex w-24 px-2 py-1">
@@ -98,4 +98,4 @@ const Projects: NextComponentType = () => {
   )
 }
 
-export default Projects
+export default Coding

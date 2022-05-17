@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-import { Header, About, Projects, Skills, Contact } from '../components'
+import { Header, About, Coding, Skills, Contact } from '../components'
 import Motion from '../components/Motion'
 
 const Home: NextPage = () => {
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <>
         <About />
         {/* <Skills /> */}
-        <Projects />
+        <Coding />
       </>
     </Motion>
   )
