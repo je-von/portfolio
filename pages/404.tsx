@@ -8,13 +8,13 @@ const ErrorPage: NextPage = () => {
 
   return (
     <>
-      <div className="flex min-h-screen min-w-full flex-col justify-center bg-[#fafdfe]">
+      <div className="flex min-h-screen min-w-full flex-col justify-center bg-white dark:bg-black">
         <Image src="/assets/404.svg" width="800" height="400" alt="404 illustration" />
 
         <div className="flex w-full flex-col items-center justify-center">
           <p className="font-jost text-2xl font-bold text-gray-800 sm:text-3xl">Whoops! Lost in Space?</p>
           <p className="text-md text-center font-sen font-medium text-gray-700 sm:text-lg">
-            The page you&apos;re looking for isn&apos;t found :( <br />
+            The page you&apos;re looking for does&apos;t exist :( <br />
             We suggest you back to home
           </p>
 

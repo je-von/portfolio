@@ -29,13 +29,13 @@ const About: NextComponentType = () => {
           </div> */}
         </p>
 
-        <Link href="http://www.jevonlevin.com" passHref>
+        <Link href="#" passHref>
           <a
             className="mt-4 flex cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read my Blog
+            Read my resume
             <MdKeyboardArrowRight />
           </a>
         </Link>

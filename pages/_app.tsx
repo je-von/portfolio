@@ -13,6 +13,7 @@ import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Script from 'next/script'
 import { ThemeProvider } from 'next-themes'
+import { Contact, Header } from '../components'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -30,13 +31,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 `}
       </Script>
       <NextSeo
-        title="Jevon | Fullstack Developer"
-        titleTemplate="Jevon | Fullstack Developer"
-        defaultTitle="Jevon | Fullstack Developer"
+        title="Jevon Levin"
+        titleTemplate="Jevon Levin"
+        defaultTitle="Jevon Levin"
         description="Hey! I'm Jevon, A Fullstack Developer, Photographer, and a Student!"
         openGraph={{
           url: 'http://www.jevonlevin.com/',
-          title: 'Jevon | Fullstack Developer',
+          title: 'Jevon Levin',
           description: "Hey! I'm Jevon, A Fullstack Developer, Photographer, and a Student!",
           // images: [
           //   {
@@ -51,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           {
             property: 'keywords',
             content:
-              'Frontend Developer, backend developer, fullstack developer, photographer, JV, JV21-2, jevon, jevon levin, Web Developer, web development, web developer, blogger, tech enthusiast, open source',
+              'jevonlevin, Frontend Developer, backend developer, fullstack developer, photographer, JV, JV21-2, jevon, jevon levin, Web Developer, web development, web developer, blogger, tech enthusiast, open source',
           },
         ]}
       />
@@ -60,7 +61,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/jpg" href="/assets/icon.jpg" />
       </Head>
       <ThemeProvider attribute="class">
-        <Component {...pageProps} />
+        <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
+          <Header />
+          <div className="">
+            <Component {...pageProps} />
+          </div>
+          <div className="bottom-0 mt-auto flex justify-center">
+            <Contact />
+          </div>
+        </div>
       </ThemeProvider>
     </>
   )
