@@ -88,9 +88,9 @@ const PhotographyDetail: NextPage = () => {
             <div className="mr-1 mb-1 rounded-lg bg-lightText px-2 py-1 text-xs text-white dark:bg-zinc-800">{curr.type}</div>
           </div>
 
-          <div className="readme mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
+          <div className="readme relative mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-11 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
             {/* <p className="cursor-pointer text-xs hover:underline dark:text-gray-100">asd</p> */}
-            <div className="relative overflow-hidden" ref={emblaRef}>
+            <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex">
                 {curr?.images.map((img, index) => (
                   <>
@@ -100,22 +100,16 @@ const PhotographyDetail: NextPage = () => {
                           src={img}
                           layout={'fill'}
                           objectFit={'contain'}
-                          className="rounded-lg bg-center bg-no-repeat blur-0"
-                          //   placeholder="blur"
+                          className="rounded-lg bg-center blur-0"
+                          placeholder="blur"
                           alt="Image"
-                          //   blurDataURL={'/assets/icon/placeholder.svg'}
+                          blurDataURL={'/assets/icon/placeholder.svg'}
                         />
                       </div>
                     </div>
                   </>
                 ))}
               </div>
-              <button className="absolute top-1/2 z-50 text-lg" type="button" onClick={scrollPrev}>
-                <MdKeyboardArrowLeft className="text-5xl text-black dark:text-white" />
-              </button>
-              <button className="absolute top-1/2 right-0 text-black dark:text-white" type="button" onClick={scrollNext}>
-                <MdKeyboardArrowRight className=" text-5xl" />
-              </button>
 
               <div className="mt-5 flex items-center justify-center space-x-2">
                 {scrollSnaps.map((_, idx) => (
@@ -128,6 +122,18 @@ const PhotographyDetail: NextPage = () => {
                   />
                 ))}
               </div>
+            </div>
+            <svg width="0" height="0">
+              <linearGradient id="main-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop stopColor="#D8B4FE" offset="0%" />
+                <stop stopColor="#818CF8" offset="100%" />
+              </linearGradient>
+            </svg>
+            <div className="absolute left-0 top-[40%] z-50 cursor-pointer text-lg " onClick={scrollPrev}>
+              <MdKeyboardArrowLeft className="text-5xl" style={{ fill: 'url(#main-gradient)' }} />
+            </div>
+            <div className="absolute top-[40%] right-0 z-50 cursor-pointer text-black dark:text-white" onClick={scrollNext}>
+              <MdKeyboardArrowRight className=" text-5xl" style={{ fill: 'url(#main-gradient)' }} />
             </div>
           </div>
         </div>
