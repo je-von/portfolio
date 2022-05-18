@@ -6,13 +6,7 @@
         "description": "A personal commisioned photoshoot taken around South Jakarta in August 2020",
         "type": "photoshoot"
     },
-    {
-        "slug": "12A2",
-        "title": "Dian Harapan Yearbook",
-        "imagesCount": 3,
-        "description": "A yearbook photoshoot taken for 12 graders in Dian Harapan School Jakarta on 2019-2020",
-        "type": "yearbook"
-    },
+    
     {
         "slug": "farren",
         "title": "Farren's Sweet 17th Birthday Party",
@@ -32,6 +26,48 @@
         "title": "Karissa's Sweet 17th Birthday Party",
         "imagesCount": 6,
         "description": "A birthday event photoshoot taken for Karissa on her Sweet 17th birthday party",
+        "type": "birthday"
+    },
+    {
+        "slug": "12S1",
+        "title": "Dian Harapan Yearbook",
+        "imagesCount": 4,
+        "description": "A yearbook photoshoot taken for 12 graders (12 Social 1) in Dian Harapan School Jakarta on 2019-2020",
+        "type": "yearbook"
+    },
+    {
+        "slug": "12A2",
+        "title": "Dian Harapan Yearbook",
+        "imagesCount": 3,
+        "description": "A yearbook photoshoot taken for 12 graders (12 Science 2) in Dian Harapan School Jakarta on 2019-2020",
+        "type": "yearbook"
+    },
+    {
+        "slug": "janice",
+        "title": "Janice's Sweet 17th Birthday Party",
+        "imagesCount": 5,
+        "description": "A birthday event photoshoot taken for Janice on her Sweet 17th birthday party",
+        "type": "birthday"
+    },
+    {
+        "slug": "yewan",
+        "title": "Yewan's Sweet 17th Birthday Party",
+        "imagesCount": 6,
+        "description": "A birthday event photoshoot taken for Yewan on her Sweet 17th birthday party",
+        "type": "birthday"
+    },
+    {
+        "slug": "giovanni",
+        "title": "Giovanni's Sweet 17th Birthday Party",
+        "imagesCount": 4,
+        "description": "A birthday event photoshoot taken for Giovanni on her Sweet 17th birthday party",
+        "type": "birthday"
+    },
+    {
+        "slug": "madeline",
+        "title": "Madeline's Sweet 17th Birthday Party",
+        "imagesCount": 3,
+        "description": "A birthday event photoshoot taken for Madeline on her Sweet 17th birthday party",
         "type": "birthday"
     }
 ]
