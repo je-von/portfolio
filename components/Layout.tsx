@@ -7,14 +7,13 @@ import { fetcher } from '../lib/fetcher'
 import Header from './Navigation/Header.nav'
 import Contact from './Sections/Contact.section'
 import { AnimatePresence, motion } from 'framer-motion'
-import PhotographyData from '../pages/api/photography.json'
 
 const Layout = (props) => {
   const { data: repoData } = useSWR<Data>('/api/github', fetcher)
   const [githubRepos, setGithubRepos] = useState(repoData)
 
-  const photographyData = PhotographyData
-  const [photographs, setPhotographs] = useState(photographyData)
+  const { data: photoData } = useSWR<Data>('/api/photography', fetcher)
+  const [photographyData, setPhotographs] = useState(photoData)
 
   return (
     <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
@@ -22,7 +21,7 @@ const Layout = (props) => {
         value={{
           state: {
             githubRepos: repoData,
-            photographs: photographyData,
+            photographyData: photoData,
           },
           setGithubRepos: setGithubRepos,
           setPhotographs: setPhotographs,

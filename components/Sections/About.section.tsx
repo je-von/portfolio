@@ -23,7 +23,12 @@ const About: NextComponentType = () => {
           <div className="mr-1">Build web app, take pictures,</div>
           <Tooltip content={<Image src="/assets/hershey.jpg" width="70" height="70" className="rounded-lg" alt="avatar" />} direction="right">
             <div className="flex cursor-pointer items-center">
-              cuddle with <b className="ml-1 items-center"> Hershey</b>
+              cuddle with{' '}
+              <Link href={'http://instagram.com/hershey.maltipoo'}>
+                <a target="_blank" rel="noopener noreferrer">
+                  <b className="ml-1 items-center text-gray-400"> Hershey</b>
+                </a>
+              </Link>
               <BsInfoCircle className="ml-2 text-xs" />
             </div>
           </Tooltip>

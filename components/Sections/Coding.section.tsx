@@ -45,7 +45,7 @@ const Coding: NextComponentType = () => {
               <Link href={`/coding/${repo.name}`} passHref>
                 <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{repo.name}</p>
               </Link>
-              <p className="max-h-2/4 w-full text-ellipsis line-clamp-2">{repo.description}</p>
+              <p className="max-h-2/4 w-full text-ellipsis leading-normal line-clamp-2">{repo.description}</p>
               <div className="mt-1 flex w-full flex-wrap items-center justify-evenly">
                 {repo.topics.slice(0, 5).map((topic: any, index: any) => (
                   <div className="mb-1 rounded-lg bg-lightText px-2 py-1 text-xs text-white dark:bg-zinc-800" key={index}>
