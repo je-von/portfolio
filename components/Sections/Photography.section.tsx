@@ -1,4 +1,5 @@
 import type { NextComponentType } from 'next'
+import Link from 'next/link'
 
 import { useContext, useState } from 'react'
 import { AiFillInstagram, AiOutlineGithub } from 'react-icons/ai'
@@ -44,9 +45,11 @@ const Photography: NextComponentType = () => {
               {/* <Image src={`/assets/photography/${p.type}/${p.slug}/0.jpg`} layout="fill" className="rounded-lg" alt="avatar" objectFit="cover" /> */}
               <div style={{ backgroundImage: `url('${p.images[0]}` }} className="absolute inset-0 rounded-lg bg-cover bg-center"></div>
               <div className="group absolute inset-0 z-10 flex flex-col items-center justify-center rounded-lg px-2 text-center text-black/0 duration-200 hover:bg-white/80 group-hover:text-black dark:text-white/0 hover:dark:bg-black/60 group-hover:dark:text-white">
-                <p className="cursor-pointer text-xl font-semibold text-black/0 line-clamp-2 hover:scale-110 hover:underline group-hover:text-black dark:text-white/0 dark:group-hover:text-white">
-                  {p.title}
-                </p>
+                <Link href={`/photography/${p.slug}`} passHref>
+                  <p className="cursor-pointer px-2 text-xl font-semibold text-black/0 line-clamp-2 hover:scale-110 hover:underline group-hover:text-black dark:text-white/0 dark:group-hover:text-white">
+                    {p.title}
+                  </p>
+                </Link>
                 <p className="max-h-2/4 w-full text-ellipsis leading-normal text-opacity-0 line-clamp-3 group-hover:text-black dark:text-opacity-0 dark:group-hover:text-white sm:line-clamp-5">
                   {p.description}
                 </p>
