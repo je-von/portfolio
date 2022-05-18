@@ -7,18 +7,25 @@ import { fetcher } from '../lib/fetcher'
 import Header from './Navigation/Header.nav'
 import Contact from './Sections/Contact.section'
 import { AnimatePresence, motion } from 'framer-motion'
+import PhotographyData from '../pages/api/photography.json'
+
 const Layout = (props) => {
-  const { data } = useSWR<Data>('/api/github', fetcher)
-  const [githubRepos, setGithubRepos] = useState(data)
+  const { data: repoData } = useSWR<Data>('/api/github', fetcher)
+  const [githubRepos, setGithubRepos] = useState(repoData)
+
+  const photographyData = PhotographyData
+  const [photographs, setPhotographs] = useState(photographyData)
 
   return (
     <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
       <AppContext.Provider
         value={{
           state: {
-            githubRepos: data,
+            githubRepos: repoData,
+            photographs: photographyData,
           },
           setGithubRepos: setGithubRepos,
+          setPhotographs: setPhotographs,
         }}
       >
         <ThemeProvider attribute="class">
