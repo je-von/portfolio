@@ -29,11 +29,16 @@ const ProjectDetail: NextPage = () => {
         <div>
           <div className="flex w-full justify-between">
             <p className="text-3xl font-bold text-black dark:text-white">{repo.name}</p>
-            <p className="text-sm">
-              {new Date(repo.createdAt).toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' })}
-            </p>
+            <p className="text-sm">{new Date(repo.createdAt).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
           </div>
           <p className="mt-1 text-lg text-gray-600">{repo.description}</p>
+          <div className="mt-1 flex w-full flex-wrap items-center sm:w-1/2">
+            {repo.topics.map((topic: any, index: any) => (
+              <div className="mr-1 mb-1 rounded-lg bg-lightText px-2 py-1 text-xs text-white dark:bg-zinc-800" key={index}>
+                {topic}
+              </div>
+            ))}
+          </div>
           <Link href={repo.repoUrl} passHref>
             <a
               className="mt-4 flex w-fit cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"

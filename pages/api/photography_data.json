@@ -1,10 +1,10 @@
 [
     {
-        "slug": "12A2",
-        "title": "Dian Harapan Yearbook",
-        "imagesCount": 3,
-        "description": "A yearbook photoshoot taken for 12 graders in Dian Harapan School Jakarta on 2019-2020",
-        "type": "yearbook"
+        "slug": "kenny",
+        "title": "Kenny's Personal Photoshoot",
+        "imagesCount": 13,
+        "description": "A personal commisioned photoshoot taken around South Jakarta in August 2020",
+        "type": "photoshoot"
     },
     {
         "slug": "12A2",
@@ -14,24 +14,24 @@
         "type": "yearbook"
     },
     {
-        "slug": "12A2",
-        "title": "Dian Harapan Yearbook",
-        "imagesCount": 3,
-        "description": "A yearbook photoshoot taken for 12 graders in Dian Harapan School Jakarta on 2019-2020",
-        "type": "yearbook"
+        "slug": "farren",
+        "title": "Farren's Sweet 17th Birthday Party",
+        "imagesCount": 5,
+        "description": "A birthday event photoshoot taken for Farren on her Sweet 17th birthday party in February 2020",
+        "type": "birthday"
     },
     {
-        "slug": "12A2",
-        "title": "Dian Harapan Yearbook",
-        "imagesCount": 3,
-        "description": "A yearbook photoshoot taken for 12 graders in Dian Harapan School Jakarta on 2019-2020",
-        "type": "yearbook"
+        "slug": "senayan",
+        "title": "Group Photoshoot Around Senayan",
+        "imagesCount": 11,
+        "description": "A group photoshoot taken around Senayan, Jakarta on March 2019",
+        "type": "photoshoot"
     },
     {
-        "slug": "12A2",
-        "title": "Dian Harapan Yearbook",
-        "imagesCount": 3,
-        "description": "A yearbook photoshoot taken for 12 graders in Dian Harapan School Jakarta on 2019-2020",
-        "type": "yearbook"
+        "slug": "karissa",
+        "title": "Karissa's Sweet 17th Birthday Party",
+        "imagesCount": 6,
+        "description": "A birthday event photoshoot taken for Karissa on her Sweet 17th birthday party",
+        "type": "birthday"
     }
 ]

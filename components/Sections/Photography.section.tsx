@@ -2,10 +2,11 @@ import type { NextComponentType } from 'next'
 
 import { useContext, useState } from 'react'
 import { AiFillInstagram, AiOutlineGithub } from 'react-icons/ai'
-
+import { BsInfoCircle } from 'react-icons/bs'
 import { MdArrowDropDown } from 'react-icons/md'
 
 import AppContext from '../../context/AppContext'
+import Tooltip from '../Misc/Tooltip'
 
 const Photography: NextComponentType = () => {
   const [count, setCount] = useState(2)
@@ -18,16 +19,18 @@ const Photography: NextComponentType = () => {
     <div className="my-16 px-3 font-sen" id="photography">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
         Photography
-        {/* <Tooltip
+        <Tooltip
           content={
             <div className="flex w-24 px-2 py-1">
-              <p className="w-full whitespace-pre-wrap break-words text-xs font-thin text-white dark:text-black">{'info'}</p>
+              <p className="w-full whitespace-pre-wrap break-words text-xs font-thin text-white dark:text-black">
+                Hover / tap on each photographs to view the details.
+              </p>
             </div>
           }
           direction="bottom"
         >
           <BsInfoCircle className="ml-3 text-sm" />
-        </Tooltip> */}
+        </Tooltip>
       </div>
       <div className="my-4 flex w-full flex-wrap items-center justify-center">
         {photographyData?.photographs?.slice(0, count).map((p, index) => (
