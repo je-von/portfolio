@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { AiFillEye, AiOutlineGithub } from 'react-icons/ai'
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdOutlineFileDownload } from 'react-icons/md'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdOutlineFileDownload, MdShare } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import Motion from '../../components/Motion'
@@ -11,8 +11,17 @@ import AppContext from '../../context/AppContext'
 import ErrorPage from '../404'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
+import Toast from '../../components/Misc/Toast'
 
 const PhotographyDetail: NextPage = () => {
+  const [toast, setToast] = useState(null)
+  useEffect(() => {
+    if (toast)
+      setTimeout(() => {
+        setToast(null)
+      }, 3000)
+  }, [toast])
+
   const router = useRouter()
   const { slug } = router.query
 
@@ -79,9 +88,26 @@ const PhotographyDetail: NextPage = () => {
   return (
     <Motion title={`Jevon Levin | ${slug}`} description="Hey! I'm Jevon, A Fullstack Developer, Photographer, and a Student!">
       <div className="my-8 w-full px-3 font-sen">
+        {toast}
         <div>
-          <div className="flex w-full justify-between">
+          <div className="flex w-full items-center justify-between">
             <p className="text-3xl font-bold text-black dark:text-white">{curr.title}</p>
+            <div
+              className="cursor-pointer hover:scale-110"
+              onClick={() => {
+                navigator.clipboard.writeText(`${curr.title} by Jevon - ${window.location.href}`)
+                setToast(
+                  <Toast
+                    message="URL Copied succesfully! Now, you can paste and share this page to anyone! &#128513;"
+                    onClose={() => {
+                      setToast(null)
+                    }}
+                  />
+                )
+              }}
+            >
+              <MdShare className="mr-1 text-lg text-black dark:text-white" />
+            </div>
           </div>
           <p className="mt-1 text-lg text-gray-600">{curr.description}</p>
           <div className="mt-1 flex w-full flex-wrap items-center sm:w-1/2">

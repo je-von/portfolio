@@ -7,7 +7,6 @@ import { fetcher } from '../lib/fetcher'
 import Header from './Navigation/Header.nav'
 import Contact from './Sections/Contact.section'
 import { AnimatePresence, motion } from 'framer-motion'
-
 const Layout = (props) => {
   const { data: repoData, isValidating: isValidatingRepo } = useSWR<Data>('/api/github', fetcher)
   const [githubRepos, setGithubRepos] = useState(repoData)
@@ -19,6 +18,8 @@ const Layout = (props) => {
     <ThemeProvider attribute="class">
       <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
         <Header />
+
+        {/* <ToastContainer align={'center'} /> */}
         {child}
         <div className="bottom-0 mt-auto flex justify-center">
           <Contact />
