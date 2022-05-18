@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import { useContext } from 'react'
 import { AiFillEye, AiOutlineGithub } from 'react-icons/ai'
-import { MdKeyboardArrowRight } from 'react-icons/md'
+import { MdKeyboardArrowRight, MdOutlineFileDownload } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import Motion from '../../components/Motion'
@@ -52,15 +52,25 @@ const ProjectDetail: NextPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillEye className="mr-1 text-black dark:text-white" />
-                view live app
+                {repo.isDownloadable ? (
+                  <>
+                    <MdOutlineFileDownload className="mr-1 text-black dark:text-white" />
+                    download app
+                  </>
+                ) : (
+                  <>
+                    <AiFillEye className="mr-1 text-black dark:text-white" />
+                    view app online
+                  </>
+                )}
+
                 <MdKeyboardArrowRight />
               </a>
             </Link>
           ) : (
             ''
           )}
-          <div className="readme mt-5 w-full max-w-[90vw] rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
+          <div className="readme mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
             <Link href={repo.repoUrl + '#readme'} passHref>
               <a target="_blank" rel="noopener noreferrer" className="cursor-pointer text-xs hover:underline dark:text-gray-100">
                 README

@@ -12,6 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       language: repo.language,
       topics: repo.topics,
       createdAt: repo.created_at,
+      isDownloadable: repo.homepage.includes('install') || repo.homepage.includes('.exe'),
     })
 
     let repositories = null

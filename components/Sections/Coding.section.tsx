@@ -5,7 +5,7 @@ import { useContext, useState } from 'react'
 import { AiFillEye, AiOutlineClose, AiOutlineGithub } from 'react-icons/ai'
 import { BsArrowDown, BsInfoCircle } from 'react-icons/bs'
 import { HiArrowDown } from 'react-icons/hi'
-import { MdArrowDownward, MdArrowDropDown, MdClose } from 'react-icons/md'
+import { MdArrowDownward, MdArrowDropDown, MdClose, MdOutlineFileDownload } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import useSWR from 'swr'
@@ -22,7 +22,7 @@ const Coding: NextComponentType = () => {
   return (
     <div className="my-16 px-3 font-sen" id="coding">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
-        Coding Projects{' '}
+        Coding
         <Tooltip
           content={
             <div className="flex w-24 px-2 py-1">
@@ -71,8 +71,17 @@ const Coding: NextComponentType = () => {
                       rel="noopener noreferrer"
                       className="flex cursor-pointer items-center rounded-lg px-2 py-1 text-lightText hover:scale-110"
                     >
-                      <AiFillEye className="mr-1" />
-                      live
+                      {repo.isDownloadable ? (
+                        <>
+                          <MdOutlineFileDownload className="mr-1" />
+                          download
+                        </>
+                      ) : (
+                        <>
+                          <AiFillEye className="mr-1" />
+                          live
+                        </>
+                      )}
                     </a>
                   </Link>
                 ) : (

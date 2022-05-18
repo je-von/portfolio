@@ -27,7 +27,7 @@ const Photography: NextComponentType = () => {
   return (
     <div className="my-16 px-3 font-sen" id="photography">
       <div className="flex items-center text-3xl font-bold text-black dark:text-white">
-        Photography Projects{' '}
+        Photography
         {/* <Tooltip
           content={
             <div className="flex w-24 px-2 py-1">
