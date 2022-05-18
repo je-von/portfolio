@@ -5,7 +5,7 @@ import { useContext, useState } from 'react'
 import { AiFillEye, AiOutlineClose, AiOutlineGithub } from 'react-icons/ai'
 import { BsArrowDown, BsInfoCircle } from 'react-icons/bs'
 import { HiArrowDown } from 'react-icons/hi'
-import { MdArrowDownward, MdArrowDropDown, MdClose, MdOutlineFileDownload } from 'react-icons/md'
+import { MdArrowDownward, MdArrowDropDown, MdClose, MdKeyboardArrowDown, MdOutlineFileDownload } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import useSWR from 'swr'
@@ -100,7 +100,7 @@ const Coding: NextComponentType = () => {
             else window.open('https://github.com/je-von?tab=repositories', '_blank')
           }}
         >
-          {count < githubRepos?.repositories.length ? <MdArrowDropDown /> : <AiOutlineGithub />}
+          {count < githubRepos?.repositories.length ? <MdKeyboardArrowDown /> : <AiOutlineGithub />}
         </button>
       </div>
     </div>

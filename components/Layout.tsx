@@ -9,11 +9,27 @@ import Contact from './Sections/Contact.section'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Layout = (props) => {
-  const { data: repoData } = useSWR<Data>('/api/github', fetcher)
+  const { data: repoData, isValidating: isValidatingRepo } = useSWR<Data>('/api/github', fetcher)
   const [githubRepos, setGithubRepos] = useState(repoData)
 
-  const { data: photoData } = useSWR<Data>('/api/photography', fetcher)
+  const { data: photoData, isValidating: isValidatingPhoto } = useSWR<Data>('/api/photography', fetcher)
   const [photographyData, setPhotographs] = useState(photoData)
+
+  const content = (child) => (
+    <ThemeProvider attribute="class">
+      <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
+        <Header />
+        {child}
+        <div className="bottom-0 mt-auto flex justify-center">
+          <Contact />
+        </div>
+      </div>
+    </ThemeProvider>
+  )
+
+  if (isValidatingPhoto || isValidatingRepo || !repoData || !photoData) {
+    return content(null)
+  }
 
   return (
     <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
@@ -27,15 +43,7 @@ const Layout = (props) => {
           setPhotographs: setPhotographs,
         }}
       >
-        <ThemeProvider attribute="class">
-          <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
-            <Header />
-            {props.children}
-            <div className="bottom-0 mt-auto flex justify-center">
-              <Contact />
-            </div>
-          </div>
-        </ThemeProvider>
+        {content(props.children)}
       </AppContext.Provider>
     </AnimatePresence>
   )

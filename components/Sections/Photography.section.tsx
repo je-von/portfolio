@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { AiFillInstagram, AiOutlineGithub } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
-import { MdArrowDropDown } from 'react-icons/md'
+import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
 
 import AppContext from '../../context/AppContext'
 import Tooltip from '../Misc/Tooltip'
@@ -84,7 +84,7 @@ const Photography: NextComponentType = () => {
             else window.open('http://instagram.com/jevonlevin', '_blank')
           }}
         >
-          {count < photographyData?.photographs?.length ? <MdArrowDropDown /> : <AiFillInstagram />}
+          {count < photographyData?.photographs?.length ? <MdKeyboardArrowDown /> : <AiFillInstagram />}
         </button>
       </div>
     </div>
