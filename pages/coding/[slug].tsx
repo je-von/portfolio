@@ -4,7 +4,7 @@ import Router, { useRouter } from 'next/router'
 import { useContext, useEffect, useState } from 'react'
 import { AiFillEye, AiOutlineGithub } from 'react-icons/ai'
 import { HiShare } from 'react-icons/hi'
-import { MdKeyboardArrowRight, MdOutlineFileDownload, MdShare } from 'react-icons/md'
+import { MdKeyboardArrowRight, MdOpenInNew, MdOutlineFileDownload, MdShare } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import Toast from '../../components/Misc/Toast'
@@ -113,7 +113,7 @@ const ProjectDetail: NextPage = () => {
           <div className="readme mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
             <Link href={repo.repoUrl + '#readme'} passHref>
               <a target="_blank" rel="noopener noreferrer" className="cursor-pointer text-xs hover:underline dark:text-gray-100">
-                README
+                README <MdOpenInNew className="ml-1" />
               </a>
             </Link>
             <ReactMarkdown rehypePlugins={[rehypeRaw]} className="pt-2">

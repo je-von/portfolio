@@ -7,6 +7,7 @@ import { fetcher } from '../lib/fetcher'
 import Header from './Navigation/Header.nav'
 import Contact from './Sections/Contact.section'
 import { AnimatePresence, motion } from 'framer-motion'
+import { MutatingDots } from 'react-loader-spinner'
 const Layout = (props) => {
   const { data: repoData, isValidating: isValidatingRepo } = useSWR<Data>('/api/github', fetcher)
   const [githubRepos, setGithubRepos] = useState(repoData)
@@ -15,38 +16,40 @@ const Layout = (props) => {
   const [photographyData, setPhotographs] = useState(photoData)
 
   const content = (child) => (
-    <ThemeProvider attribute="class">
-      <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
-        <Header />
-
-        {/* <ToastContainer align={'center'} /> */}
-        {child}
-        <div className="bottom-0 mt-auto flex justify-center">
-          <Contact />
-        </div>
-      </div>
-    </ThemeProvider>
+    <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+      <ThemeProvider attribute="class">{child}</ThemeProvider>
+    </AnimatePresence>
   )
 
   if (isValidatingPhoto || isValidatingRepo || !repoData || !photoData) {
-    return content(null)
+    return content(
+      <div className="flex h-screen w-screen items-center justify-center">
+        <MutatingDots color="#D8B4FE" secondaryColor="#FCA5A5" height={100} width={110} />
+      </div>
+    )
   }
 
   return (
-    <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
-      <AppContext.Provider
-        value={{
-          state: {
-            githubRepos: repoData,
-            photographyData: photoData,
-          },
-          setGithubRepos: setGithubRepos,
-          setPhotographs: setPhotographs,
-        }}
-      >
-        {content(props.children)}
-      </AppContext.Provider>
-    </AnimatePresence>
+    <AppContext.Provider
+      value={{
+        state: {
+          githubRepos: repoData,
+          photographyData: photoData,
+        },
+        setGithubRepos: setGithubRepos,
+        setPhotographs: setPhotographs,
+      }}
+    >
+      {content(
+        <div className="flex min-h-screen flex-col px-2 sm:px-8 md:px-24 lg:px-48 xl:px-72">
+          <Header />
+          {props.children}
+          <div className="bottom-0 mt-auto flex justify-center">
+            <Contact />
+          </div>
+        </div>
+      )}
+    </AppContext.Provider>
   )
 }
 

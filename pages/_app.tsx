@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.scss'
 import '../styles/tooltip.css'
 import '../styles/carousel.css'
-
 import '@fontsource/jost/400.css'
 import '@fontsource/jost/500.css'
 import '@fontsource/jost/600.css'
