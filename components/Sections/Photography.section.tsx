@@ -38,7 +38,7 @@ const Photography: NextComponentType = () => {
           <div
             // onClick={() => setRepo(repo)}
             key={index}
-            className="relative mx-2 my-4 min-h-fit min-w-[16rem] shrink-0 grow-0 basis-1/3 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105 sm:min-w-[23rem]"
+            className="animate-customUp relative mx-2 my-4 min-h-fit min-w-[16rem] shrink-0 grow-0 basis-1/3 rounded-lg bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-1 text-white duration-100 hover:scale-105 sm:min-w-[23rem]"
           >
             {/* <Carousel photographData={p} key={index} /> */}
             <div className="relative h-48 w-full sm:h-72">
@@ -78,7 +78,7 @@ const Photography: NextComponentType = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="rounded-full bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-105 dark:text-black"
+          className="rounded-full bg-gradient-to-r from-[#D8B4FE] to-[#818CF8] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-110 dark:text-black"
           onClick={() => {
             if (count < photographyData?.photographs?.length) setCount((prev) => prev + 2)
             else window.open('http://instagram.com/jevonlevin', '_blank')

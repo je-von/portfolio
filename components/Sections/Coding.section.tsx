@@ -39,7 +39,7 @@ const Coding: NextComponentType = () => {
           <div
             // onClick={() => setRepo(repo)}
             key={repo.id}
-            className="mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
+            className="animate-customUp mx-2 my-4 min-h-fit  min-w-[16rem] shrink-0 grow-0 basis-1/4 rounded-lg bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-1 text-white duration-100 hover:scale-105"
           >
             <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
               <Link href={`/coding/${repo.name}`} passHref>
@@ -94,7 +94,7 @@ const Coding: NextComponentType = () => {
       </div>
       <div className="flex items-center justify-center">
         <button
-          className="rounded-full bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-105 dark:text-black"
+          className="rounded-full bg-gradient-to-r from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] p-2 text-center font-jost text-xl font-medium text-white duration-100 hover:scale-110 dark:text-black"
           onClick={() => {
             if (count < githubRepos?.repositories.length) setCount((prev) => prev + 3)
             else window.open('https://github.com/je-von?tab=repositories', '_blank')
