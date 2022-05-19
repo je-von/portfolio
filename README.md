@@ -1,24 +1,9 @@
-<h1>
-    Welcome to my Portfolio
-</h1>
+## my personal portfolio
 
-> Note: This is a portfolio template, feel free to use it. And star it if you liked :P
+ℹ️ A portfolio created using **NextJS** (TypeScript) and deployed using Vercel
 
-![demo](./public/assests/docs/demo.jpg)
+<h3 align="center">🌐 Click <a href="http://jevonlevin.com">here</a> to view this web live</h3>
 
-✨ [Live Demo](https://anurag.tech)
+> Note: This is portfolio was inspired by <a href="https://github.com/kr-anurag">anurag</a>'s portfolio
 
-### Using the template
-
-To use this template, read and follow the steps given in the [Using Guide](./USING.md)
-
-### Author
-
-😊 Anurag
-
-- [Portfolio](https://anurag.tech)
-- [Github](https://github.com/kr-anurag)
-- [Twitter](https://twitter.com/imanuraglol)
-- [Blog](https://blog.anurag.tech)
-
-Give a star ⭐ to show your support :P
+Give a star ⭐ to show your support
