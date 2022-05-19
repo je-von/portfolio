@@ -1,6 +1,6 @@
 ## my personal portfolio
 
-ℹ️ A portfolio created using **NextJS** (TypeScript) and deployed using Vercel
+ℹ️ A portfolio created using **NextJS** (TypeScript), **Tailwind CSS**, and deployed using Vercel
 
 <h3 align="center">🌐 Click <a href="http://jevonlevin.com">here</a> to view this web live</h3>
 
