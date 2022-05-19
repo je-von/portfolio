@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import { useCallback, useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import { AiFillEye, AiOutlineGithub } from 'react-icons/ai'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdOutlineFileDownload, MdShare } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
@@ -12,6 +12,7 @@ import ErrorPage from '../404'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import Toast from '../../components/Misc/Toast'
+import Autoplay from 'embla-carousel-autoplay'
 
 const PhotographyDetail: NextPage = () => {
   const [toast, setToast] = useState(null)
@@ -30,6 +31,10 @@ const PhotographyDetail: NextPage = () => {
 
   const curr = photographyData?.photographs?.find((p) => p.slug == slug)
 
+  const autoplay = useRef(Autoplay({
+    delay: 3000, stopOnMouseEnter:true, stopOnInteraction:false
+  }, (emblaRoot) => emblaRoot.parentElement))
+
   const [emblaRef, embla] = useEmblaCarousel({
     align: 'start',
     // aligns the first slide to the start
@@ -46,7 +51,7 @@ const PhotographyDetail: NextPage = () => {
     inViewThreshold: 0.7,
     // percentage of a slide that need's to be visible
     // inorder to be considered in view, 0.7 is 70%.
-  })
+  }, [autoplay.current])
 
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState([])
