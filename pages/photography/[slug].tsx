@@ -32,7 +32,7 @@ const PhotographyDetail: NextPage = () => {
   const curr = photographyData?.photographs?.find((p) => p.slug == slug)
 
   const autoplay = useRef(Autoplay({
-    delay: 3000, stopOnMouseEnter:true, stopOnInteraction:false
+    delay: 5000, stopOnMouseEnter:true, stopOnInteraction:false
   }, (emblaRoot) => emblaRoot.parentElement))
 
   const [emblaRef, embla] = useEmblaCarousel({
@@ -132,9 +132,9 @@ const PhotographyDetail: NextPage = () => {
                           layout={'fill'}
                           objectFit={'contain'}
                           className="rounded-lg bg-center blur-0"
-                          placeholder="blur"
+                          // placeholder="blur"
                           alt="Image"
-                          blurDataURL={'/assets/icon/placeholder.svg'}
+                          // blurDataURL={'/assets/icon/placeholder.svg'}
                         />
                       </div>
                     </div>
