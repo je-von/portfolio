@@ -21,11 +21,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const userReposResponse = await fetch('https://api.github.com/users/je-von/repos?sort=pushed&direction=desc&per_page=9')
       const temp = await userReposResponse.json()
       repositories = temp.map(mapFunc)
-      message = 'Data fetched from api.github.com'
+      message = 'Data fetched from GitHub API'
     } catch (e: any) {
       // return res.status(500).json({ message: e.message })
       repositories = Repos.map(mapFunc)
-      message = 'Fail to fetch from api.github.com (API rate limit exceeded). Now showing saved repositories from 17/05/2022.'
+      message = 'Fail to fetch from GitHub API (max rate limit exceeded). Now showing saved repositories from 17/05/2022.'
     }
 
     for (let repo of repositories) {
