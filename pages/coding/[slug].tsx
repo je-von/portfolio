@@ -112,7 +112,7 @@ const ProjectDetail: NextPage = () => {
           </div> */}
           <div className="readme mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
             <Link href={repo.repoUrl + '#readme'} passHref>
-              <a target="_blank" rel="noopener noreferrer" className="cursor-pointer text-xs hover:underline dark:text-gray-100">
+              <a target="_blank" rel="noopener noreferrer" className="flex cursor-pointer text-xs hover:underline dark:text-gray-100">
                 README <MdOpenInNew className="ml-1" />
               </a>
             </Link>
