@@ -21,7 +21,8 @@ const Layout = (props) => {
     </AnimatePresence>
   )
 
-  if (isValidatingPhoto || isValidatingRepo || !repoData || !photoData) {
+  if ((isValidatingPhoto && !photoData) || (isValidatingRepo && !repoData)) {
+  // if ((isValidatingPhoto || !photoData )|| (isValidatingRepo || !repoData)) {
     return content(
       <div className="flex h-screen w-screen items-center justify-center">
         <MutatingDots color="#D8B4FE" secondaryColor="#FCA5A5" height={100} width={110} />
