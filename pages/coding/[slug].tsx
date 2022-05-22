@@ -7,6 +7,12 @@ import { HiShare } from 'react-icons/hi'
 import { MdKeyboardArrowRight, MdOpenInNew, MdOutlineFileDownload, MdShare } from 'react-icons/md'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
+import rehypeStringify from 'rehype-stringify'
+import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table'
+// import remarkGridTables from 'remark-grid-tables'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
 import Toast from '../../components/Misc/Toast'
 import Motion from '../../components/Motion'
 import AppContext from '../../context/AppContext'
@@ -112,11 +118,16 @@ const ProjectDetail: NextPage = () => {
           </div> */}
           <div className="readme mt-5 w-full max-w-[90vw] overflow-hidden rounded-lg border bg-white px-7 py-4 text-black dark:border-0 dark:bg-[#0d1117] dark:text-white">
             <Link href={repo.repoUrl + '#readme'} passHref>
-              <a target="_blank" rel="noopener noreferrer" className="flex items-center cursor-pointer text-xs hover:underline dark:text-gray-100">
+              <a target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center text-xs hover:underline dark:text-gray-100">
                 README <MdOpenInNew className="ml-1" />
               </a>
             </Link>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} className="pt-2">
+            <ReactMarkdown
+              rehypePlugins={[rehypeRaw]}
+              remarkPlugins={[remarkParse, remarkGfm, remarkExtendedTable, remarkRehype, rehypeStringify]}
+              remarkRehypeOptions={{ handlers: extendedTableHandlers }}
+              className="pt-2"
+            >
               {repo?.readme}
             </ReactMarkdown>
           </div>
