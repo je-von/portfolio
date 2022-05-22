@@ -3,28 +3,33 @@ import { Data } from '../../@types/prop.types'
 import Repos from './github_temp.json'
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'GET') {
-    const mapFunc = (repo: Data) => ({
-      id: repo.id,
-      repoUrl: repo.html_url,
-      name: repo.name,
-      description: repo.description,
-      appUrl: repo.homepage,
-      language: repo.language,
-      topics: repo.topics,
-      createdAt: repo.created_at,
-      isDownloadable: repo.homepage.includes('install') || repo.homepage.includes('.exe'),
-    })
+    const convert = (repo: Data) => {
+      return repo
+        .filter((r) => r.name !== 'je-von' && !r.fork)
+        .splice(0, 9)
+        .map((r) => ({
+          id: r.id,
+          repoUrl: r.html_url,
+          name: r.name,
+          description: r.description,
+          appUrl: r.homepage,
+          language: r.language,
+          topics: r.topics,
+          createdAt: r.created_at,
+          isDownloadable: r.homepage.includes('install') || r.homepage.includes('.exe'),
+        }))
+    }
 
     let repositories = null
     let message = ''
     try {
-      const userReposResponse = await fetch('https://api.github.com/users/je-von/repos?sort=pushed&direction=desc&per_page=9')
+      const userReposResponse = await fetch('https://api.github.com/users/je-von/repos?sort=pushed&direction=desc')
       const temp = await userReposResponse.json()
-      repositories = temp.map(mapFunc)
+      repositories = convert(temp)
       message = 'Data fetched from GitHub API'
     } catch (e: any) {
       // return res.status(500).json({ message: e.message })
-      repositories = Repos.map(mapFunc)
+      repositories = convert(Repos)
       message = 'Fail to fetch from GitHub API (max rate limit exceeded). Now showing saved repositories from 17/05/2022.'
     }
 
