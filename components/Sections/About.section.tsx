@@ -17,7 +17,7 @@ const About: NextComponentType = () => {
     <div className="my-8 flex flex-row justify-between px-3 font-sen sm:items-center">
       <div>
         <p className="text-3xl font-bold text-black dark:text-white">Jevon Levin</p>
-        <p className="mt-1 text-lg text-gray-600">Fullstack Developer, Photographer, and a Student</p>
+        <p className="mt-1 text-lg text-gray-600">Full Stack Developer, Photographer, and a Student</p>
 
         <div className="mt-4 flex flex-wrap items-center text-gray-400">
           <div className="mr-1">Build web app, take pictures,</div>
@@ -32,9 +32,6 @@ const About: NextComponentType = () => {
               <BsInfoCircle className="ml-2 text-xs" />
             </div>
           </Tooltip>
-          {/* <div className="ml-1 cursor-pointer" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-            {isHovering ? <Image src="/assets/hershey.jpg" width="50" height="50" className="rounded-full" alt="avatar" /> : <b>Hershey.</b>}
-          </div> */}
         </div>
 
         <Link href="#" passHref>
