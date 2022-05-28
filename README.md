@@ -7,9 +7,11 @@
 <h3 align="center">🌐 Click <a href="http://jevonlevin.com">here</a> to view this web live</h3>
 
 👁️Preview:
+
 ![5](https://user-images.githubusercontent.com/86874779/169347237-c5298c03-73e5-4980-8a8e-01063b37496c.png)
 
-
 Give a star ⭐ to show your support
+
+Mockup image source: https://www.freepik.com/free-psd/full-screen-smartphone-laptop-mockup-design_11573159.htm
 
 _Disclaimer: This is portfolio was inspired by <a href="https://github.com/kr-anurag">anurag</a>'s portfolio_
