@@ -40,14 +40,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           url: 'http://www.jevonlevin.com/',
           title: 'Jevon Levin',
           description: "Hey! I'm Jevon, A Fullstack Developer, Photographer, and a Student!",
-          // images: [
-          //   {
-          //     url: 'https://res.cloudinary.com/ddum5vpp3/image/upload/v1643532760/og-image_dwcwhp.png',
-          //     width: 800,
-          //     height: 420,
-          //     alt: 'Anurag | Frontend Developer',
-          //   },
-          // ],
         }}
         additionalMetaTags={[
           {

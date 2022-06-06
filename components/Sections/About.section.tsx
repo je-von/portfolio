@@ -34,17 +34,28 @@ const About: NextComponentType = () => {
           </Tooltip>
         </div>
 
-        <Link href="#" passHref>
-          <a
-            className="mt-4 flex w-fit cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
-            // target="_blank"
-            // rel="noopener noreferrer"
-          >
-            <AiOutlineAlignLeft className="mr-1 text-black dark:text-white" />
-            read my resume
-            <MdKeyboardArrowRight />
-          </a>
-        </Link>
+        <Tooltip
+          content={
+            <div className="flex w-24 px-2 py-1">
+              <p className="w-full whitespace-pre-wrap break-words text-xs font-thin text-white dark:text-black">
+                Sorry 😔, this feature isn&apos;t available yet!
+              </p>
+            </div>
+          }
+          direction="bottom"
+        >
+          <Link href="#" passHref>
+            <a
+              className="mt-4 flex w-fit cursor-pointer flex-row items-center gap-1 font-jost text-xl text-gray-400 duration-100 hover:ml-2"
+              // target="_blank"
+              // rel="noopener noreferrer"
+            >
+              <AiOutlineAlignLeft className="mr-1 text-black dark:text-white" />
+              read my resume
+              <MdKeyboardArrowRight />
+            </a>
+          </Link>
+        </Tooltip>
       </div>
 
       <div className="custom:block">
