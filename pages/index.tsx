@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 
-import { Header, About, Coding, Skills, Contact } from '../components'
+import { Header, About, Coding, Contact } from '../components'
 import Motion from '../components/Motion'
 import Photography from '../components/Sections/Photography.section'
 
