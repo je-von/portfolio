@@ -1,10 +1,12 @@
-## my personal portfolio
+## my personal portfolio 
 
 ℹ️ A fully responsive portfolio website, which provides two themes option (light and dark), created using **NextJS** (a React Web App framework using TypeScript) and **Tailwind CSS** (a CSS framework).
 
 📂This portfolio was created to showcase my programming and photography projects. The data shown in this web was fetched from <a href="http://api.github.com">GitHub API</a> and <a href="http://jevonlevin.com/api/photography">my own API</a> (to fetch my photography projects)
 
-<h3 align="center">🌐 Click <a href="http://jevonlevin.com">here</a> to view this web live</h3>
+<!-- <h3>🌐 Click <a href="http://jevonlevin.com">here</a> to view this web live</h3> -->
+
+<p align="center"><img src="https://githits.vercel.app/api/views?user=je-von&repo=portfolio&mode=dark&disable=Total"/></p>
 
 👁️Preview:
 
