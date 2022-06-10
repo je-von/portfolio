@@ -31,27 +31,26 @@ const PhotographyDetail: NextPage = () => {
 
   const curr = photographyData?.photographs?.find((p) => p.slug == slug)
 
-  const autoplay = useRef(Autoplay({
-    delay: 5000, stopOnMouseEnter:true, stopOnInteraction:false
-  }, (emblaRoot) => emblaRoot.parentElement))
+  const autoplay = useRef(
+    Autoplay(
+      {
+        delay: 5000,
+        stopOnMouseEnter: true,
+        stopOnInteraction: false,
+      },
+      (emblaRoot) => emblaRoot.parentElement
+    )
+  )
 
-  const [emblaRef, embla] = useEmblaCarousel({
-    align: 'start',
-    // aligns the first slide to the start
-    // of the viewport else will align it to the middle.
-
-    loop: true,
-    // we need the carousel to loop to the
-    // first slide once it reaches the last slide.
-
-    skipSnaps: false,
-    // Allow the carousel to skip scroll snaps if
-    // it's dragged vigorously.
-
-    inViewThreshold: 0.7,
-    // percentage of a slide that need's to be visible
-    // inorder to be considered in view, 0.7 is 70%.
-  }, [autoplay.current])
+  const [emblaRef, embla] = useEmblaCarousel(
+    {
+      align: 'start',
+      loop: true,
+      skipSnaps: false,
+      inViewThreshold: 0.7,
+    },
+    [autoplay.current]
+  )
 
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState([])
@@ -60,15 +59,7 @@ const PhotographyDetail: NextPage = () => {
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla])
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla])
 
-  // this function allow's us to scroll to the slide whose
-  // id correspond's to the id of the navigation dot when we
-  // click on it.
-
   const scrollTo = useCallback((index) => embla && embla.scrollTo(index), [embla])
-
-  // set the id of the current slide to active id
-  // we need it to correctly highlight it's corresponding
-  // navigation dot.
 
   const onSelect = useCallback(() => {
     if (!embla) return
@@ -76,9 +67,6 @@ const PhotographyDetail: NextPage = () => {
     setPrevBtnEnabled(embla.canScrollPrev())
     setNextBtnEnabled(embla.canScrollNext())
   }, [embla, setSelectedIndex])
-
-  // make sure embla is mounted and return true operation's
-  // can be only performed on it if it's successfully mounted.
 
   useEffect(() => {
     if (!embla) return
@@ -131,10 +119,10 @@ const PhotographyDetail: NextPage = () => {
                           src={img}
                           layout={'fill'}
                           objectFit={'contain'}
-                          className="rounded-lg bg-center blur-0"
-                          // placeholder="blur"
+                          className="rounded-lg bg-center bg-no-repeat blur-0"
+                          placeholder="blur"
                           alt="Image"
-                          // blurDataURL={'/assets/icon/placeholder.svg'}
+                          blurDataURL={img}
                         />
                       </div>
                     </div>
