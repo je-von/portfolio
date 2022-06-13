@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const convert = (repo: Data) => {
       return repo
         .filter((r) => r.name !== 'je-von' && !r.fork)
-        .splice(0, 12)
+        .splice(0, 9)
         .map((r) => ({
           id: r.id,
           repoUrl: r.html_url,
