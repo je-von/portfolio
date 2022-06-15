@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const Toast = (props) => {
   return (
     <div

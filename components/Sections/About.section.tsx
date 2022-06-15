@@ -2,17 +2,13 @@ import type { NextComponentType } from 'next'
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
 import { AiOutlineAlignLeft } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
-import { HiOutlineArrowNarrowRight } from '../Misc/Icons.collection'
 import Tooltip from '../Misc/Tooltip'
 
 const About: NextComponentType = () => {
-  // const [isHovering, setIsHovering] = useState(false)
-
   return (
     <div className="my-8 flex flex-row justify-between px-3 font-sen sm:items-center">
       <div>

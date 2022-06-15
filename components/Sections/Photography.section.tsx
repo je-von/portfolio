@@ -2,10 +2,8 @@ import type { NextComponentType } from 'next'
 import Link from 'next/link'
 
 import { useContext, useState } from 'react'
-import { AiFillInstagram, AiOutlineGithub } from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
-import { FiInstagram } from 'react-icons/fi'
-import { MdArrowDropDown, MdKeyboardArrowDown } from 'react-icons/md'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 import { RiInstagramLine } from 'react-icons/ri'
 
 import AppContext from '../../context/AppContext'

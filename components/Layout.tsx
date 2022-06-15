@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'next-themes'
-import { Component, useState } from 'react'
+import { useState } from 'react'
 import useSWR from 'swr'
 import { Data } from '../@types/prop.types'
 import AppContext from '../context/AppContext'
@@ -22,7 +22,7 @@ const Layout = (props) => {
   )
 
   if ((isValidatingPhoto && !photoData) || (isValidatingRepo && !repoData)) {
-  // if ((isValidatingPhoto || !photoData )|| (isValidatingRepo || !repoData)) {
+    // if ((isValidatingPhoto || !photoData )|| (isValidatingRepo || !repoData)) {
     return content(
       <div className="flex h-screen w-screen items-center justify-center">
         <MutatingDots color="#D8B4FE" secondaryColor="#FCA5A5" height={100} width={110} />

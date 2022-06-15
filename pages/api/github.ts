@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } catch (e: any) {
       // return res.status(500).json({ message: e.message })
       repositories = convert(Repos)
-      message = 'GitHub API max rate limit exceeded. Now showing saved repositories from 06/06/2022.'
+      message = 'Failed to fetch from GitHub API. Now showing saved repositories from 06/06/2022.'
     }
 
     for (let repo of repositories) {

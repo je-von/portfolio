@@ -36,7 +36,7 @@ const Coding: NextComponentType = () => {
             key={repo.id}
             className="mx-2 my-4 min-h-fit min-w-[16rem]  shrink-0 grow-0 basis-1/4 animate-customUp rounded-lg bg-gradient-to-r from-[#a8d2e7] to-[#f7a49f] p-1 text-white duration-100 hover:scale-105"
           >
-            <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-2 text-center font-medium text-black dark:bg-black dark:text-white">
+            <div className="flex h-full min-h-[12rem] w-full flex-col items-center justify-center rounded-lg bg-white px-3 text-center font-medium text-black dark:bg-black dark:text-white">
               <Link href={`/coding/${repo.name}`} passHref>
                 <p className="cursor-pointer text-xl font-semibold hover:scale-110 hover:underline">{repo.name}</p>
               </Link>
