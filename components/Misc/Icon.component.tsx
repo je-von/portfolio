@@ -5,14 +5,13 @@ import Link from 'next/link'
 
 import type { iconProps } from '../../@types/prop.types'
 
-const Icon: NextComponentType<NextPageContext, {}, iconProps> = ({ icon, url }) => {
+const Icon: NextComponentType<NextPageContext, {}, iconProps> = ({ icon, url, newTab }) => {
   return (
     <Link href={url} passHref>
       <a
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="contact icon"
-        className="rounded-lg bg-lightText p-2 text-2xl text-white ring-zinc-300 transition-all duration-150 hover:ring-2 dark:bg-[#0d1117]"
+        target={newTab && '_blank'}
+        rel={newTab && 'noopener noreferrer'}
+        className="cursor-pointer rounded-md p-2 text-xl text-black duration-100 hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
       >
         {icon}
       </a>

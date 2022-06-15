@@ -1,15 +1,11 @@
 interface iconProps {
   icon: JSX.Element
   url: string
-}
-
-interface linkProps {
-  text: JSX.Element
-  url: string
+  newTab: boolean
 }
 
 export interface Data {
   [key: string]: any
 }
 
-export type { iconProps, linkProps }
+export type { iconProps }
