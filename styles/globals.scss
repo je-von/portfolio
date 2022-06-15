@@ -50,7 +50,7 @@ h3 {
   @apply text-base;
 }
 a {
-  @apply text-lightText transition-colors duration-500;
+  @apply dark:text-gray-400 text-lightText transition-colors duration-500;
 }
 
 * {
