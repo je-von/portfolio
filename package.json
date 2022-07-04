@@ -12,7 +12,7 @@
     "@fontsource/jost": "^4.5.10",
     "@fontsource/sen": "^4.5.3",
     "@tailwindcss/line-clamp": "^0.4.0",
-    "@types/node": "^18.0.0",
+    "@types/node": "^18.0.1",
     "array-shuffle": "^3.0.0",
     "axios": "^0.27.2",
     "embla-carousel-autoplay": "^6.2.0",
