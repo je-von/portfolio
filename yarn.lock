@@ -2814,10 +2814,10 @@ mdast-util-definitions@^5.0.0:
     "@types/unist" "^2.0.0"
     unist-util-visit "^3.0.0"
 
-mdast-util-extended-table@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mdast-util-extended-table/-/mdast-util-extended-table-1.0.0.tgz#76b322a0f69974d7467411609643c7bf8f6f3f66"
-  integrity sha512-YpVQGo9JR727oW5OtTefFeGDaNA2FUuHHYvDweOsUcfPxnQhVKfHTBhYScI2QTgIsm7cxjfumc6xCPauysCpSA==
+mdast-util-extended-table@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mdast-util-extended-table/-/mdast-util-extended-table-1.0.1.tgz#22f486e309196383458937d594779279ee6c60af"
+  integrity sha512-g4e0EKa41SRLHSMgP5bs2yf/xA0RRTvlcNNtnuLG2BoOUvfF/mEG34z+JHcuV+OBwXkTMITecvdmYGE5QFBXRQ==
   dependencies:
     "@types/hast" "^2.3.4"
     "@types/mdast" "^3.0.10"
@@ -2825,7 +2825,7 @@ mdast-util-extended-table@^1.0.0:
     mdast-util-from-markdown "^1.0.0"
     mdast-util-to-hast "^12.0.0"
     mdast-util-to-markdown "^1.2.1"
-    micromark-extension-extended-table "^1.0.0"
+    micromark-extension-extended-table "^1.0.1"
     unist-builder "^3.0.0"
     unist-util-position "^4.0.1"
 
@@ -3001,10 +3001,10 @@ micromark-core-commonmark@^1.0.0, micromark-core-commonmark@^1.0.1:
     micromark-util-types "^1.0.1"
     uvu "^0.5.0"
 
-micromark-extension-extended-table@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/micromark-extension-extended-table/-/micromark-extension-extended-table-1.0.0.tgz#84e2b2fbfc3678e339d4caf1d1a5d2adc46cd437"
-  integrity sha512-ETOOzmhZ2GhdN4CRWIABIfH3Hfr4BblRcXJth4hjZnkhmDp8ydMXeQ8EmyRebxndpDTkeHByFZS1iUt2XOnXHQ==
+micromark-extension-extended-table@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/micromark-extension-extended-table/-/micromark-extension-extended-table-1.0.1.tgz#2734f2a084eeafe01012994ff05b1a7726d71447"
+  integrity sha512-ssducQl5FYZHDq3JCoeiK3Z91b4A2Wx+Yo825jrS3boCJQu0JtuTc7IMbfvjGO5KPIpSmSeO8VsHoYwNyUjzkQ==
   dependencies:
     assert "^2.0.0"
     micromark-util-chunked "^1.0.0"
@@ -3928,13 +3928,13 @@ rehype-stringify@^9.0.3:
     hast-util-to-html "^8.0.0"
     unified "^10.0.0"
 
-remark-extended-table@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/remark-extended-table/-/remark-extended-table-1.0.0.tgz#efb0a40f6174b01d9bafab5b39419d14fa029883"
-  integrity sha512-mlD0GU0qCOoGaTu9Ruddmdn0FOhuc6nnde0DmNJyO9+ADxbMni7YcXJUa3XZNWZ+Gm9a14I6olGx2mvYfRl6TQ==
+remark-extended-table@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/remark-extended-table/-/remark-extended-table-1.0.1.tgz#43ec79f258cb75b066eb07f45000e533ae204296"
+  integrity sha512-kGHDzhN8VqlJCoV/8io9erlNHHk38mD0RdYcQUauntQocoTo1A9Rkq9Uj5nrKy7SKjKVz2jN6waIWXKflNrSDw==
   dependencies:
-    mdast-util-extended-table "^1.0.0"
-    micromark-extension-extended-table "^1.0.0"
+    mdast-util-extended-table "^1.0.1"
+    micromark-extension-extended-table "^1.0.1"
 
 remark-gfm@^3.0.1:
   version "3.0.1"
